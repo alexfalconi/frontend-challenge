@@ -1,0 +1,16 @@
+{
+	"projectName": "frontend-challenge",
+	"mode": "file-router",
+	"typescript": true,
+	"packageManager": "npm",
+	"includeExamples": false,
+	"projectPreset": "default",
+	"addOnOptions": {},
+	"git": true,
+	"install": true,
+	"intent": true,
+	"routerOnly": true,
+	"version": 1,
+	"framework": "react",
+	"chosenAddOns": []
+}

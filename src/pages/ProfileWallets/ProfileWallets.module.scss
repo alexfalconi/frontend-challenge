@@ -1,0 +1,77 @@
+@use "settings" as *;
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+
+	&_title {
+		font-size: $base-line - 2;
+		font-weight: 700;
+		color: $color-main;
+	}
+
+	&_actions {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		color: $color-main;
+	}
+
+	&_link {
+		padding: 0;
+		appearance: none;
+		cursor: pointer;
+		font-family: $font-primary;
+		font-size: $base-font + 2;
+		color: $color-secondary;
+		background-color: transparent;
+		border: 0;
+		transition: 200ms ease-in-out;
+
+		&:hover {
+			color: $color-main;
+		}
+	}
+
+	&_text {
+		margin-top: 4px;
+		color: $color-secondary-3;
+	}
+}
+
+.form {
+	margin-top: 28px;
+
+	&_grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px 28px;
+	}
+
+	&_ens {
+		display: flex;
+		gap: 10px;
+	}
+
+	&_action {
+		margin-top: 32px;
+	}
+}
+
+.secondary {
+	margin-top: 44px;
+}
+
+@media (max-width: $bp-sm) {
+	.form {
+		&_grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.head {
+		flex-wrap: wrap;
+	}
+}

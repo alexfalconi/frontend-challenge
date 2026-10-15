@@ -1,0 +1,44 @@
+@use "settings" as *;
+
+.burger {
+	width: 30px;
+	cursor: pointer;
+	z-index: 1;
+	display: none;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 5px;
+
+	span {
+		display: block;
+		height: 3px;
+		width: 100%;
+		background-color: $color-secondary;
+		transition: 0.25s ease-in-out;
+		border-radius: 2px;
+
+		&:nth-child(1) {
+			top: 0px;
+		}
+
+		&:nth-child(2) {
+			width: 20px;
+		}
+
+		&:nth-child(3) {
+			width: 15px;
+		}
+	}
+
+	&_open {
+		span {
+			width: 100% !important;
+		}
+	}
+}
+
+@media (max-width: $bp-sm) {
+	.burger {
+		display: flex;
+	}
+}

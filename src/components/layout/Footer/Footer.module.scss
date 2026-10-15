@@ -1,0 +1,199 @@
+@use "settings" as *;
+
+.footer {
+	margin-top: 95px;
+
+	&_bkg {
+		background-color: $color-primary-2;
+		padding-block: 30px;
+
+		strong {
+			font-size: $base-font + 3;
+			color: $color-main;
+			font-weight: 700;
+		}
+	}
+
+	&_top {
+		display: flex;
+		padding-inline: 30px;
+
+		p {
+			color: $color-secondary-2;
+		}
+	}
+
+	&_box {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		border-right: 1px solid $color-secondary;
+		padding-inline: 16px;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:before {
+			content: attr(data-circle);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 74px;
+			height: 74px;
+			border-radius: 100%;
+			background-color: $color-secondary;
+			color: $color-primary-2;
+			font-size: $base-line * 1.2;
+			font-weight: 700;
+		}
+	}
+
+	&_newsletter {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		min-width: 325px;
+		padding-left: 16px;
+
+		form {
+			display: flex;
+
+			input {
+				flex: 1;
+				height: 40px;
+				outline: none;
+				border: none;
+				font-family: $font-primary;
+				background-color: $color-primary-3;
+				padding-inline: 12px;
+				color: $color-secondary-3;
+
+				&::placeholder {
+					color: $color-secondary-3;
+				}
+			}
+
+			button {
+				min-width: 85px;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+
+	&_middle {
+		margin-block: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: $color-primary-3;
+		padding: 22px 32px;
+
+		> * {
+			flex: 1;
+			text-align: center;
+			color: $color-main;
+
+			&[href]:hover {
+				color: $color-secondary;
+			}
+		}
+	}
+
+	&_bottom {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 30px 0 30px;
+	}
+
+	&_menu {
+		ul {
+			margin-top: 15px;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+
+			a {
+				color: $color-main;
+
+				&:hover {
+					color: $color-secondary;
+				}
+			}
+		}
+	}
+
+	&_social {
+		&_networks {
+			margin-block: 20px 30px;
+			display: flex;
+			gap: 10px;
+
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 30px;
+				height: 30px;
+				border-radius: 5px;
+				border: 1px solid $color-secondary;
+				color: $color-secondary;
+
+				&:hover {
+					background-color: $color-main;
+					border-color: $color-main;
+					color: $color-primary;
+				}
+			}
+		}
+
+		&_wallet {
+			margin-top: 12px;
+			padding: 10px;
+			background-color: $color-primary-3;
+			border-radius: 6px;
+			border: 1px solid $color-primary-4;
+			font-size: 10px;
+			font-weight: 700;
+			color: $color-secondary;
+		}
+	}
+
+	&_copy {
+		margin-block: 15px 25px;
+		text-align: center;
+	}
+}
+
+@media (max-width: $bp-sm) {
+	.footer {
+		&_top {
+			flex-direction: column;
+		}
+
+		&_box {
+			padding: 0;
+			border-bottom: 1px solid $color-secondary;
+			border-right: none;
+			padding-bottom: 15px;
+			margin-bottom: 15px;
+		}
+
+		&_newsletter {
+			padding: 0;
+		}
+
+		&_middle {
+			flex-direction: column;
+			gap: 15px;
+		}
+
+		&_bottom {
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+			text-align: center;
+		}
+	}
+}

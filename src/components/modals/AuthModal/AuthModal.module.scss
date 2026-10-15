@@ -1,0 +1,104 @@
+@use "settings" as *;
+
+.auth {
+	--auth-px: 80px;
+
+	padding: 44px var(--auth-px) 60px;
+
+	&_tabs {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 42px;
+	}
+
+	&_tab {
+		padding: 0 10px;
+		appearance: none;
+		cursor: pointer;
+		font-family: $font-primary;
+		font-size: $base-line;
+		font-weight: 500;
+		line-height: $base-line + 4;
+		color: $color-main;
+		background-color: transparent;
+		border: 0;
+		outline: none;
+		transition: 200ms ease-in-out;
+
+		&:first-child {
+			padding-left: 0;
+			border-right: 1px solid $color-secondary;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+
+		&[data-state="active"] {
+			color: $color-secondary;
+		}
+
+		&:focus-visible {
+			text-decoration: underline;
+		}
+	}
+
+	&_form {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-top: 30px;
+
+		button[type="submit"] {
+			margin-top: 12px;
+		}
+	}
+
+	&_forgot {
+		align-self: flex-end;
+		color: $color-secondary;
+
+		&:hover {
+			color: $color-main;
+		}
+	}
+
+	&_divider {
+		position: relative;
+		margin: 20px calc(var(--auth-px) * -1) 20px;
+		text-align: center;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 0;
+			left: 0;
+			height: 1px;
+			background-color: $color-primary-4;
+		}
+
+		span {
+			position: relative;
+			padding: 0 12px;
+			background-color: $color-primary-2;
+			color: $color-main;
+		}
+	}
+
+	&_social {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+}
+
+@media (max-width: $bp-xs) {
+	.auth {
+		--auth-px: 24px;
+
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}

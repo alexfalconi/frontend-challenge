@@ -1,0 +1,146 @@
+@use "settings" as *;
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1001;
+	display: flex;
+	flex-direction: column;
+	width: calc(100% - 30px);
+	max-height: calc(100dvh - 30px);
+	overflow-y: auto;
+	transform: translate(-50%, -50%);
+	background-color: $color-primary-2;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+	outline: none;
+
+	&[data-state="open"] {
+		animation: modalIn 200ms ease-out;
+	}
+
+	&[data-state="closed"] {
+		animation: modalOut 150ms ease-in;
+	}
+
+	&_size {
+		&_default {
+			max-width: 500px;
+		}
+
+		&_wide {
+			max-width: 578px;
+		}
+	}
+
+	&_overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 1000;
+		background-color: rgba($color-primary, 0.8);
+
+		&[data-state="open"] {
+			animation: overlayIn 200ms ease-out;
+		}
+
+		&[data-state="closed"] {
+			animation: overlayOut 150ms ease-in;
+		}
+	}
+
+	&_close {
+		position: absolute;
+		top: 14px;
+		right: 16px;
+		z-index: 1;
+		display: flex;
+		padding: 0;
+		appearance: none;
+		cursor: pointer;
+		color: $color-secondary;
+		background-color: transparent;
+		border: 0;
+		transition: 200ms ease-in-out;
+
+		&:hover {
+			color: $color-main;
+		}
+	}
+
+	&_bar {
+		flex-shrink: 0;
+		height: 10px;
+		margin-top: auto;
+		background-color: $color-secondary;
+	}
+
+	&_title {
+		font-size: $base-line - 4;
+		font-weight: 700;
+		color: $color-secondary;
+		text-align: center;
+	}
+
+	&_description {
+		font-size: $base-font - 1;
+		line-height: $base-line - 3;
+		color: $color-main;
+		text-align: center;
+	}
+
+	&_sr {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+}
+
+@keyframes modalIn {
+	from {
+		opacity: 0;
+		transform: translate(-50%, calc(-50% + 12px));
+	}
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@keyframes modalOut {
+	from {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+	to {
+		opacity: 0;
+		transform: translate(-50%, calc(-50% + 12px));
+	}
+}
+
+@keyframes overlayIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes overlayOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.modal,
+	.modal_overlay {
+		animation: none !important;
+	}
+}

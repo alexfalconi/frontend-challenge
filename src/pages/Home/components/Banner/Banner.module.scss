@@ -1,0 +1,58 @@
+@use "settings" as *;
+
+.banner {
+	&_item {
+		display: flex;
+		align-items: center;
+
+		> div:last-child {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		.welcome {
+			font-weight: 500;
+		}
+
+		h2 {
+			margin-block: 10px 5px;
+			max-width: 500px;
+			font-size: $base-line * 2.15;
+			font-weight: 700;
+			line-height: $base-line * 3.5;
+		}
+
+		p:not(.welcome) {
+			max-width: 550px;
+			color: $color-secondary-2;
+		}
+
+		a,
+		button {
+			margin-top: 30px;
+		}
+	}
+}
+
+@media (max-width: $bp-sm) {
+	.banner {
+		&_item {
+			flex-direction: column-reverse;
+			align-items: center;
+			gap: 30px;
+
+			h2 {
+				font-size: $base-line * 1.5;
+				line-height: $base-line * 2;
+			}
+
+			div:last-child {
+				justify-content: center;
+
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

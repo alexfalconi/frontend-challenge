@@ -1,0 +1,30 @@
+@use "settings" as *;
+
+.breadcrumb {
+	&_list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&_item {
+		font-weight: 700;
+
+		a {
+			font-size: $base-font + 1;
+			color: $color-main;
+
+			&:hover {
+				color: $color-secondary;
+			}
+		}
+
+		& + & {
+			&:before {
+				content: "/";
+				margin-inline: 8px;
+				color: $color-main;
+			}
+		}
+	}
+}

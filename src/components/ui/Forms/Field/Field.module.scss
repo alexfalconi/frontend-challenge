@@ -1,0 +1,21 @@
+@use "settings" as *;
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+
+	&_label {
+		display: block;
+		min-height: $base-line * 1.3;
+		font-size: $base-font + 1;
+		line-height: $base-line * 1.2;
+		color: $color-main;
+	}
+
+	&_required {
+		margin-left: 5px;
+		font-size: $base-line;
+		color: $color-orange;
+	}
+}

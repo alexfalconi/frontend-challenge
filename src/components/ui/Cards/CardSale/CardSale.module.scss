@@ -1,0 +1,54 @@
+@use "settings" as *;
+
+.cardsale {
+	display: flex;
+	align-items: center;
+	background-color: $color-primary-2;
+	border-radius: 0 10px 10px 0;
+
+	&:hover {
+		.cardsale_image img {
+			transform: scale(1.1);
+		}
+	}
+
+	&_image {
+		min-width: 250px;
+		overflow: hidden;
+		border-radius: 15px;
+
+		img {
+			width: 100%;
+			height: auto;
+			transition: 200ms ease-in-out;
+		}
+	}
+
+	&_text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		padding-inline: 30px;
+		text-align: right;
+		gap: 15px;
+
+		h3 {
+			font-size: $base-line - 2;
+			line-height: $base-line * 1.2;
+			font-weight: 700;
+			color: $color-main;
+		}
+
+		p {
+			color: $color-secondary;
+		}
+	}
+}
+
+@media (max-width: $bp-sm) {
+	.cardsale {
+		padding: 20px;
+		flex-direction: column;
+		gap: 20px;
+	}
+}

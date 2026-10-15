@@ -1,0 +1,63 @@
+@use "settings" as *;
+
+.tabs {
+	&_list {
+		display: flex;
+		gap: 20px;
+		margin-bottom: 25px;
+
+		&_border {
+			box-shadow: 0 0.3px 0 0 $color-secondary;
+		}
+
+		&_trigger {
+			appearance: none;
+			background-color: transparent;
+			border: none;
+			margin: 0;
+			padding: 0;
+			color: $color-main;
+			font-family: $font-primary;
+			font-size: $base-font + 2;
+
+			outline: none;
+			cursor: pointer;
+			border-bottom: 3px solid transparent;
+			padding-bottom: 5px;
+			transition: 200ms ease-in-out;
+
+			&[data-state="active"] {
+				font-weight: 500;
+				color: $color-secondary;
+				border-bottom-color: $color-secondary;
+			}
+		}
+	}
+
+	&_content {
+		&[data-state="active"] {
+			animation: tabIn 250ms ease-out;
+		}
+
+		p {
+			color: $color-secondary-2;
+		}
+	}
+}
+
+@keyframes tabIn {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.tabs_content[data-state="active"] {
+		animation: none;
+	}
+}

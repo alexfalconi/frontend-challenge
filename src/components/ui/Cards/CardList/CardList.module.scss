@@ -1,0 +1,11 @@
+@use "settings" as *;
+
+.row_gap_v {
+	row-gap: 70px;
+}
+
+@media (max-width: $bp-sm) {
+	.row_gap_v {
+		row-gap: 30px;
+	}
+}

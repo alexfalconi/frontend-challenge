@@ -1,0 +1,127 @@
+@use "settings" as *;
+
+.info {
+	&_title {
+		font-size: $base-line * 1.4;
+		line-height: $base-line * 1.6;
+		font-weight: 700;
+		color: $color-main;
+	}
+
+	&_header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		margin-top: 14px;
+		padding-bottom: 14px;
+		box-shadow: 0 0.3px 0 0 $color-secondary;
+	}
+
+	&_price {
+		font-size: $base-line * 1.1;
+		font-weight: 700;
+		color: $color-secondary;
+	}
+
+	&_label {
+		margin-top: 14px;
+		font-size: $base-font + 1;
+		font-weight: 700;
+		color: $color-main;
+	}
+
+	&_text {
+		margin-top: 12px;
+		color: $color-secondary-2;
+	}
+
+	&_edition {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+		margin-top: 12px;
+
+		&_item {
+			height: 28px;
+			padding-inline: 10px;
+			appearance: none;
+			cursor: pointer;
+			font-family: $font-primary;
+			font-size: $base-font;
+			color: $color-secondary-2;
+			background-color: transparent;
+			border: 1px solid $color-primary-4;
+			border-radius: 100%;
+			transition: 200ms ease-in-out;
+
+			&:hover,
+			&_active {
+				color: $color-secondary;
+				border-color: $color-secondary;
+			}
+		}
+	}
+
+	&_buy {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		margin-top: 16px;
+
+		&_actions {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+	}
+
+	&_meta {
+		display: flex;
+		flex-direction: column;
+		gap: 9px;
+		margin-top: 14px;
+
+		li {
+			color: $color-secondary-3;
+			line-height: $base-line * 1.7;
+		}
+	}
+
+	&_share {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: 10px;
+
+		h2 {
+			margin-top: 0;
+		}
+
+		a {
+			display: flex;
+			color: $color-main;
+
+			&:hover {
+				color: $color-secondary;
+			}
+		}
+	}
+}
+
+@media (max-width: $bp-md) {
+	.info {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: $bp-xs) {
+	.info {
+		&_header,
+		&_buy {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+}

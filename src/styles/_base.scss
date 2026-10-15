@@ -1,0 +1,72 @@
+@use "settings" as *;
+
+html,
+body {
+	font-family: $font-primary;
+	font-size: $base-font;
+	color: $color-main;
+	background-color: $color-primary;
+	overflow-x: hidden;
+}
+
+main {
+	padding-top: 100px;
+	min-height: 500px;
+}
+
+a {
+	text-decoration: none;
+	transition: 200ms ease-in-out;
+}
+
+a,
+img {
+	outline: none;
+}
+
+p {
+	font-size: $base-font;
+	line-height: $base-line * 1.2;
+	font-weight: 400;
+
+	+ p {
+		margin-top: 20px;
+	}
+}
+
+strong,
+b {
+	font-weight: 700;
+}
+
+em {
+	font-style: italic;
+}
+
+img {
+	display: block;
+	border: 0;
+}
+
+//Seleção do Site
+::selection {
+	background: $color-secondary;
+	color: $color-primary;
+}
+
+::-webkit-selection {
+	background: $color-secondary;
+	color: $color-primary;
+}
+
+::-moz-selection {
+	background: $color-secondary;
+	color: $color-primary;
+}
+
+// responsive
+@media (max-width: $bp-sm) {
+	main {
+		padding-top: 65px;
+	}
+}

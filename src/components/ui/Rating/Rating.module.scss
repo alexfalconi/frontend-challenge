@@ -1,0 +1,19 @@
+@use "settings" as *;
+
+.rating {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+
+	&_stars {
+		display: flex;
+		gap: 5px;
+		color: $color-secondary;
+		font-size: $base-font;
+	}
+
+	&_label {
+		color: $color-main;
+		font-size: $base-font + 1;
+	}
+}

@@ -1,0 +1,45 @@
+@use "mixins" as *;
+@use "../../settings" as settings;
+
+.row {
+	@include row;
+
+	.row {
+		width: calc(100% + #{settings.$col-gutter * 1});
+		margin-left: - calc(settings.$col-gutter / 2);
+	}
+}
+
+.col {
+	@include col;
+}
+
+@if settings.$use-sm == true {
+	@media (min-width: #{settings.$sm}) and (max-width: #{settings.$md}) {
+		@include cols($mq: sm);
+	}
+}
+
+@if settings.$use-md == true {
+	@media (min-width: #{settings.$md}) {
+		@include cols($mq: md);
+	}
+}
+
+@if settings.$use-lg == true {
+	@media (min-width: #{settings.$lg}) and (max-width: #{settings.$xg}) {
+		@include cols($mq: lg);
+	}
+}
+
+@if settings.$use-xg == true {
+	@media (min-width: #{settings.$xg}) and (max-width: #{settings.$xx}) {
+		@include cols($mq: xg);
+	}
+}
+
+@if settings.$use-xx == true {
+	@media (min-width: #{settings.$xx}) {
+		@include cols($mq: xx);
+	}
+}

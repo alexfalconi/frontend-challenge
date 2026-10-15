@@ -1,0 +1,165 @@
+@use "settings" as *;
+
+.header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	max-width: 1200px;
+	margin-inline: auto;
+	padding-block: 23px 10px;
+	box-shadow: 0 0.3px 0 0 $color-secondary;
+	background-color: $color-primary;
+	transition: 200ms ease-in-out;
+
+	&_full {
+		max-width: 100%;
+		padding-top: 10px;
+	}
+
+	&_inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1200px;
+		margin-inline: auto;
+	}
+
+	&_nav {
+		display: flex;
+		gap: 40px;
+
+		&_search {
+			display: none;
+		}
+
+		a {
+			position: relative;
+			color: $color-main;
+			font-size: $base-font + 2;
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: -20px;
+				left: 0;
+				right: 0;
+				border-bottom: 0px solid $color-secondary;
+				opacity: 0;
+				transition: 200ms ease-in-out;
+			}
+
+			@media (min-width: $bp-sm) {
+				&:hover {
+					color: $color-secondary;
+					font-weight: 700;
+
+					&:after {
+						border-bottom-width: 3px;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	&_action {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+
+		&_icon {
+			position: relative;
+			cursor: pointer;
+			color: $color-main;
+
+			&:hover svg {
+				color: $color-secondary;
+			}
+
+			&[data-count]:before {
+				content: attr(data-count);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: -5px;
+				right: -10px;
+				width: 16px;
+				height: 16px;
+				background-color: $color-secondary;
+				border-radius: 100%;
+				font-size: 10px;
+				font-weight: 500;
+				border: 2px solid $color-primary;
+				color: $color-primary;
+			}
+
+			svg {
+				transition: 200ms ease;
+			}
+		}
+	}
+}
+
+@media (max-width: $bp-lg) {
+	.header {
+		padding: 10px;
+
+		&_inner {
+			padding-inline: 15px;
+		}
+	}
+}
+
+@media (max-width: $bp-sm) {
+	.header {
+		&_nav {
+			padding: 20px;
+			gap: 20px;
+			flex-direction: column;
+			align-items: flex-end;
+			position: fixed;
+			right: -300px;
+			top: 55px;
+			bottom: 0;
+			background-color: $color-primary;
+			min-width: 300px;
+			border-left: 1px solid color-mix(in oklab, $color-secondary 30%, transparent);
+			transition: 200ms ease-in-out;
+
+			&_open {
+				right: 0;
+			}
+
+			&_search {
+				display: flex;
+
+				> div {
+					flex: 1;
+				}
+
+				button {
+					min-width: 45px;
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+			}
+		}
+
+		&_action {
+			gap: 30px;
+
+			&_icon {
+				&:first-child {
+					display: none;
+				}
+			}
+
+			button {
+				display: none;
+			}
+		}
+	}
+}

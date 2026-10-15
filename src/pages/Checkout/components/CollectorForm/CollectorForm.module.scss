@@ -1,0 +1,32 @@
+@use "settings" as *;
+
+.form {
+	&_title {
+		margin-bottom: 12px;
+		font-size: $base-line - 3;
+		font-weight: 700;
+		color: $color-main;
+	}
+
+	&_grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px 24px;
+	}
+
+	&_full {
+		grid-column: 1 / -1;
+	}
+
+	&_input_indent {
+		padding-left: 22px;
+	}
+}
+
+@media (max-width: $bp-sm) {
+	.form {
+		&_grid {
+			grid-template-columns: 1fr;
+		}
+	}
+}

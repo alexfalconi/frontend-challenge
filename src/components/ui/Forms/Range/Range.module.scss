@@ -1,0 +1,56 @@
+@use "settings" as *;
+
+.range {
+	&_slider {
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: 15px;
+		user-select: none;
+		touch-action: none;
+
+		&_track {
+			position: relative;
+			flex-grow: 1;
+			height: 4px;
+			border-radius: 999px;
+			background: $color-secondary;
+		}
+
+		&_bar {
+			position: absolute;
+			height: 100%;
+			border-radius: 999px;
+			background: $color-secondary;
+		}
+
+		&_thumb {
+			display: block;
+			width: 20px;
+			height: 20px;
+			border: 3px solid $color-primary;
+			border-radius: 100%;
+			background: $color-secondary;
+			cursor: grab;
+			transition: transform 0.15s ease;
+
+			&:hover {
+				transform: scale(1.08);
+			}
+
+			&:active {
+				cursor: grabbing;
+			}
+
+			&:focus-visible {
+				outline: 2px solid $color-main;
+				outline-offset: 3px;
+			}
+		}
+	}
+
+	&_label {
+		margin-block: 12px;
+		font-size: $base-font + 1;
+	}
+}

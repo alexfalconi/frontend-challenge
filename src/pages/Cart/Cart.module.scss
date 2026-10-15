@@ -1,0 +1,13 @@
+@use "settings" as *;
+
+.cart {
+	&_breadcrumb {
+		margin-bottom: 8px;
+	}
+}
+
+@media (max-width: $bp-md) {
+	.cart {
+		padding-bottom: 40px;
+	}
+}

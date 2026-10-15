@@ -1,0 +1,13 @@
+@use "settings" as *;
+
+.checkout {
+	&_breadcrumb {
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: $bp-md) {
+	.checkout {
+		padding-bottom: 40px;
+	}
+}

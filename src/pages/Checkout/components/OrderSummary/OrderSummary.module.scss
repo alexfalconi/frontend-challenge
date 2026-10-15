@@ -1,0 +1,163 @@
+@use "settings" as *;
+
+.order {
+	&_title {
+		margin-bottom: 16px;
+		font-size: $base-line - 3;
+		font-weight: 700;
+		color: $color-main;
+	}
+
+	&_header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: 12px;
+		font-size: $base-font + 2;
+		color: $color-main;
+		border-bottom: 1px solid $color-primary-4;
+	}
+
+	&_items {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-top: 12px;
+	}
+
+	&_item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		height: 70px;
+		padding-right: 10px;
+		background-color: $color-primary-2;
+		border-radius: 6px;
+
+		img {
+			flex-shrink: 0;
+			width: 70px;
+			height: 70px;
+			object-fit: cover;
+			border-radius: 5px;
+		}
+
+		&_text {
+			flex: 1;
+
+			strong {
+				display: block;
+				font-size: $base-font + 2;
+				color: $color-main;
+			}
+
+			span {
+				display: block;
+				margin-top: 6px;
+				font-size: $base-font;
+				color: $color-secondary-3;
+			}
+		}
+
+		&_qty {
+			font-size: $base-font;
+			color: $color-secondary-2;
+			white-space: nowrap;
+		}
+
+		&_price {
+			min-width: 85px;
+			text-align: right;
+			font-size: $base-line - 2;
+			color: $color-secondary;
+			white-space: nowrap;
+		}
+	}
+
+	&_promo {
+		margin-top: 12px;
+		text-align: center;
+		color: $color-main;
+	}
+
+	&_list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-top: 12px;
+
+		&_item {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 12px;
+			color: $color-main;
+
+			dt {
+				font-size: $base-font + 1;
+			}
+
+			dd {
+				font-size: $base-line - 2;
+			}
+		}
+
+		&_note {
+			display: block;
+			text-align: center;
+			font-size: $base-font - 2;
+			color: $color-secondary;
+		}
+	}
+
+	&_total {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 12px;
+		padding: 12px 42px 0;
+		border-top: 1px solid $color-primary-4;
+
+		strong:first-child {
+			font-size: $base-font + 2;
+			color: $color-main;
+		}
+
+		strong:last-child {
+			font-size: $base-line - 2;
+			color: $color-secondary;
+		}
+	}
+
+	&_subtitle {
+		margin: 12px 0 20px;
+		text-align: center;
+		font-size: $base-font + 2;
+		font-weight: 700;
+		color: $color-main;
+	}
+
+	&_wallets {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		margin-bottom: 24px;
+	}
+
+	&_badge {
+		display: inline-block;
+		padding: 8px 10px 6px;
+		background-color: $color-primary-3;
+		border-radius: 6px;
+		border: 1px solid $color-primary-4;
+		font-size: 10px;
+		font-weight: 700;
+		color: $color-secondary;
+	}
+}
+
+@media (max-width: $bp-md) {
+	.order {
+		margin-top: 30px;
+	}
+}

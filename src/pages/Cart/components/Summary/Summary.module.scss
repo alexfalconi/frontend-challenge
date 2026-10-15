@@ -1,0 +1,119 @@
+@use "settings" as *;
+
+.summary {
+	margin-top: 12px;
+	margin-left: 50px;
+
+	&_title {
+		padding-bottom: 10px;
+		font-size: $base-line - 2;
+		font-weight: 700;
+		color: $color-main;
+		border-bottom: 1px solid $color-primary-4;
+	}
+
+	&_label {
+		display: block;
+		margin-bottom: 8px;
+		font-size: $base-font;
+		font-weight: 700;
+		color: $color-main;
+	}
+
+	&_coupon {
+		margin-top: 24px;
+
+		&_field {
+			display: flex;
+			overflow: hidden;
+
+			input {
+				flex: 1;
+				height: 38px;
+				padding: 0 10px;
+				font-family: $font-primary;
+				font-size: $base-font - 2;
+				color: $color-main;
+				background-color: transparent;
+				border: 0;
+				outline: none;
+				border: 1px solid $color-secondary;
+				border-radius: 4px 0 0 4px;
+
+				&::placeholder {
+					color: $color-secondary-2;
+				}
+			}
+
+			button {
+				min-width: 100px;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+
+	&_list {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		margin-top: 20px;
+
+		&_note {
+			display: block;
+			text-align: right;
+			font-size: $base-font - 2;
+			color: $color-secondary;
+		}
+	}
+
+	&_item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		color: $color-main;
+
+		dt {
+			font-size: $base-font + 1;
+		}
+
+		dd {
+			font-size: $base-line - 2;
+		}
+	}
+
+	&_total {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 24px 0 16px;
+
+		strong:first-child {
+			font-size: $base-font + 2;
+			color: $color-main;
+		}
+
+		strong:last-child {
+			font-size: $base-line - 2;
+			color: $color-secondary;
+		}
+	}
+
+	&_link {
+		display: block;
+		margin-top: 16px;
+		text-align: center;
+		color: $color-secondary;
+
+		&:hover {
+			color: $color-main;
+		}
+	}
+}
+
+@media (max-width: $bp-md) {
+	.summary {
+		margin-top: 30px;
+	}
+}

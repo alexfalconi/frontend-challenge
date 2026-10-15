@@ -1,0 +1,115 @@
+@use "settings" as *;
+
+.btn {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: $font-primary;
+	font-size: $base-font + 2;
+	line-height: 12px;
+	font-weight: 500;
+	border-radius: 6px;
+	cursor: pointer;
+	padding: 0 10px;
+	appearance: none;
+	border: 1px solid transparent;
+	transition: 200ms ease-in-out;
+	white-space: nowrap;
+	height: 35px;
+	color: $color-primary;
+	outline: none;
+	background-color: $color-secondary;
+
+	&:hover {
+		background-color: $color-main;
+	}
+
+	&.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	&.loading {
+		pointer-events: none;
+		opacity: 0.5;
+
+		svg {
+			animation: spin 800ms linear infinite;
+		}
+
+		@keyframes spin {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	}
+
+	&_icon {
+		justify-content: space-between;
+		gap: 6px;
+	}
+
+	&_full {
+		width: 100%;
+	}
+
+	&_color {
+		&_white {
+			background-color: $color-main;
+			border-color: $color-primary;
+			color: $color-primary;
+
+			&:hover {
+				background-color: rgba($color-primary, 0.1);
+			}
+		}
+
+		&_outline {
+			background-color: transparent;
+			border-color: $color-secondary;
+			color: $color-main;
+
+			&:hover {
+				background-color: rgba($color-secondary, 0.15);
+			}
+		}
+
+		&_dark {
+			justify-content: center;
+			gap: 10px;
+			background-color: transparent;
+			border-color: $color-primary-3;
+			color: $color-secondary-2;
+
+			&:hover {
+				background-color: rgba($color-secondary, 0.08);
+				border-color: $color-secondary;
+			}
+		}
+	}
+
+	&_size {
+		&_small {
+			min-width: 100px;
+			height: 35px;
+		}
+
+		&_medium {
+			min-width: 140px;
+			height: 40px;
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.btn {
+		min-width: 60px;
+		padding: 0 15px;
+	}
+}

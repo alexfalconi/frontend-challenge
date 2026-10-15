@@ -1,0 +1,40 @@
+// Grid
+$col-count: 12;
+$row-width: 1230px;
+$col-gutter: 30px;
+
+$sm: 768px;
+$md: 1024px;
+$lg: 1230px;
+$xg: 0;
+$xx: 0;
+
+$use-sm: true;
+$use-md: true;
+$use-lg: true;
+$use-xg: false;
+$use-xx: false;
+
+// Breakpoints
+$bp-lg: 1200px;
+$bp-md: 1023px;
+$bp-sm: 767px;
+$bp-xs: 580px;
+
+// Fonts
+$font-primary: "Roboto Mono Variable", monospace;
+$base-font: 14px;
+$base-line: 20px;
+
+// Colors
+$color-main: #f5f1eb;
+$color-orange: #f0805f;
+
+$color-primary: #140d0a; //Marrom
+$color-primary-2: #241612; //Marrom 2
+$color-primary-3: #38220f; //Marrom 3
+$color-primary-4: #55321f; //Marrom 4
+
+$color-secondary: #d28a4c; //Bege
+$color-secondary-2: #cfb28c; //Bege 2
+$color-secondary-3: #b39463; //Bege 3

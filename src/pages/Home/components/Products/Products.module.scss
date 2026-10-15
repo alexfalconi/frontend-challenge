@@ -1,0 +1,23 @@
+@use "settings" as *;
+
+.products {
+	position: relative;
+	margin-bottom: 25px;
+
+	&_filter {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 1;
+
+		p {
+			font-size: $base-font + 1;
+		}
+	}
+}
+
+@media (max-width: $bp-sm) {
+	.products_filter {
+		display: none;
+	}
+}

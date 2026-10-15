@@ -1,0 +1,44 @@
+@use "settings" as *;
+
+.swiper {
+	.swiper-pagination.swiper-pagination-bullets {
+		bottom: 40px;
+
+		.swiper-pagination-bullet {
+			background-color: $color-secondary;
+			opacity: 1;
+
+			&-active {
+				background-color: $color-main;
+			}
+		}
+	}
+
+	&.dots_block {
+		.swiper-pagination.swiper-pagination-bullets {
+			margin-top: 32px;
+			position: initial;
+
+			.swiper-pagination-bullet {
+				width: 12px;
+				height: 12px;
+				background-color: $color-primary;
+				border: 1px solid $color-secondary;
+				opacity: 1;
+
+				&-active {
+					background-color: $color-secondary;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $bp-sm) {
+	.swiper {
+		.swiper-pagination.swiper-pagination-bullets {
+			margin-top: 15px;
+			position: initial;
+		}
+	}
+}

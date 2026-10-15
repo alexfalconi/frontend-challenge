@@ -1,0 +1,47 @@
+@use "settings" as *;
+
+.card {
+	width: 100%;
+
+	&:hover {
+		.card_image img {
+			transform: scale(1.1);
+		}
+	}
+
+	&_image {
+		display: block;
+
+		margin-bottom: 12px;
+		padding: 30px 4px 20px 4px;
+		background-color: $color-primary-2;
+
+		&_radius {
+			border-radius: 15px;
+			overflow: hidden;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			transition: 200ms ease-in-out;
+		}
+	}
+
+	&_text {
+		display: block;
+	}
+
+	&_title {
+		font-size: $base-font + 2;
+		color: $color-main;
+		transition: 200ms ease-in-out;
+	}
+
+	&_price {
+		margin-top: 12px;
+		font-size: $base-line - 2;
+		color: $color-secondary;
+		font-weight: 700;
+	}
+}

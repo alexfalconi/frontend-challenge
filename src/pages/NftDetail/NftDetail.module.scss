@@ -1,0 +1,13 @@
+@use "settings" as *;
+
+.nft {
+	&_breadcrumb {
+		margin-bottom: 16px;
+	}
+}
+
+@media (max-width: $bp-md) {
+	.nft {
+		padding-bottom: 40px;
+	}
+}
