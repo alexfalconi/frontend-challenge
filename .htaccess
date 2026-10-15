@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /projetos/frontend-challenge/
+
+    # não reescreve o próprio index.html
+    RewriteRule ^index\.html$ - [L]
+
+    # qualquer caminho que não seja arquivo ou pasta real cai no index.html
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /projetos/frontend-challenge/index.html [L]
+
+</IfModule>

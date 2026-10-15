@@ -4,7 +4,8 @@ import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { fileURLToPath } from "node:url";
 
-const config = defineConfig({
+const config = defineConfig(({ command }) => ({
+	base: command === "build" ? "/projetos/frontend-challenge/" : "/",
 	resolve: { tsconfigPaths: true },
 	plugins: [devtools(), tanstackRouter({ target: "react", autoCodeSplitting: true }), viteReact()],
 	css: {
@@ -14,6 +15,6 @@ const config = defineConfig({
 			},
 		},
 	},
-});
+}));
 
 export default config;
